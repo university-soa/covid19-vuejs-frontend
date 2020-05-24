@@ -52,13 +52,4 @@
     a {
         color: #42b983;
     }
-    /* Header/Blog Title */
-    .header {
-        padding: 30px;
-        text-align: center;
-        background: white;
-    }
-    .header h1 {
-        font-size: 50px;
-    }
 </style>
