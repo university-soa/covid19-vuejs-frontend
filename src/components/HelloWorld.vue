@@ -29,6 +29,7 @@
     </ul>
     <ul>
       <li v-for="anew in news" v-bind:key="anew">
+        <div class="news">
         <h4>{{anew.title }}</h4>
         <div>{{ anew.author }}, {{ anew.creationDate }}</div>
         <table>
@@ -39,6 +40,8 @@
         <p v-for="par in anew.paragraphs" v-bind:key="par">
           {{par}}
         </p>
+        </div>
+        <br>
       </li>
     </ul>
   </div>
@@ -78,5 +81,11 @@ li {
 }
 a {
   color: #42b983;
+}
+div .news {
+  border-color: darkgreen;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 5px;
 }
 </style>
