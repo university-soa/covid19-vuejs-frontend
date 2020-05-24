@@ -1,6 +1,6 @@
 # covid19_news_frontend
 
-## Project setup
+## Development Project setup
 ```
 npm install
 ```
@@ -22,3 +22,8 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Docker
+#### Local build and run
+build: `docker build . --tag covid-19-vuejs:dev`  
+run: `docker run -d -p 8080:8080 --rm --name covid_19_vuejs covid-19-vuejs:dev`
