@@ -5,15 +5,17 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import '@fortawesome/fontawesome-free/css/all.css'
+import Hub from './hub'
 
 Vue.config.productionTip = false
 
 // Setup axios as the Vue default $http library
-axios.defaults.baseURL = 'http://localhost:8080' // same as the Url the server listens to
+axios.defaults.baseURL = 'https://localhost:44353' // same as the Url the server listens to
 Vue.prototype.$http = axios;
 
 // Install Vue extensions
 Vue.use(BootstrapVue);
+Vue.use(Hub);
 
 new Vue({
   render: h => h(App),
