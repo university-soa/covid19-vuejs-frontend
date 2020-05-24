@@ -37,13 +37,16 @@
             keywords: <td v-for="keyword in anew.keywords" v-bind:key="keyword"> #{{keyword}}</td>
           </tr>
         </table>
-        <p v-for="par in anew.paragraphs" v-bind:key="par">
+        <p class="news" v-for="par in anew.paragraphs" v-bind:key="par">
           {{par}}
         </p>
         </div>
         <br>
       </li>
     </ul>
+    <div>
+
+    </div>
   </div>
 </template>
 
@@ -55,7 +58,8 @@ export default {
   },
   data: function() {
 return {
-    news : []
+    news : [],
+    covid: {}
   };
 },
   created() {
@@ -71,6 +75,9 @@ return {
 h3 {
   margin: 40px 0 0;
 }
+h4 {
+  font-family: Georgia,"Times New Roman",Times,serif;
+}
 ul {
   list-style-type: none;
   padding: 0;
@@ -82,7 +89,16 @@ li {
 a {
   color: #42b983;
 }
-div .news {
+p.news {
+  font-family: Georgia,"Times New Roman",Times,serif;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 10px;
+  margin-inline-end: 10px;
+  text-align: justify;
+}
+div.news {
   border-color: darkgreen;
   border-style: solid;
   border-width: medium;
