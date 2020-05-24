@@ -27,6 +27,20 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <ul>
+      <li v-for="anew in news" v-bind:key="anew">
+        <h4>{{anew.title }}</h4>
+        <div>{{ anew.author }}, {{ anew.creationDate }}</div>
+        <table>
+          <tr>
+            keywords: <td v-for="keyword in anew.keywords" v-bind:key="keyword"> #{{keyword}}</td>
+          </tr>
+        </table>
+        <p v-for="par in anew.paragraphs" v-bind:key="par">
+          {{par}}
+        </p>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -35,6 +49,16 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data: function() {
+return {
+    news : []
+  };
+},
+  created() {
+    fetch("http://localhost:8081/news").then(response => response.json()).then(response => {
+      this.news = response
+    })
   }
 }
 </script>
