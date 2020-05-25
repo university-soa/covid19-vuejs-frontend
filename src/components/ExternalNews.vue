@@ -14,7 +14,7 @@
                             <td v-for="topic in anew.topics" v-bind:key="topic"> #{{topic}}</td>
                         </tr>
                     </table>
-                    <p>{{anew.excerpt}}</p>
+                    <p class="news">{{anew.excerpt}}</p>
                     See more here: <a :href="anew.webUrl">{{anew.webUrl}}</a>
                 </div>
                 <br>
@@ -48,46 +48,6 @@
     }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-    h3 {
-        margin: 40px 0 0;
-    }
-    h4 {
-        font-family: Georgia,"Times New Roman",Times,serif;
-    }
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    li {
-        display: block;
-        margin: 0 5rem;
-    }
-    a {
-        color: #42b983;
-    }
-    p.news {
-        font-family: Georgia,"Times New Roman",Times,serif;
-        display: block;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 1em;
-        margin-inline-end: 1em;
-        text-align: justify;
-    }
-    div.news {
-        border-color: #753836;
-        border-style: solid;
-        border-width: medium;
-        border-radius: 5px;
-        display: block;
-    }
-    .aligned {
-        display: block;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 1em;
-        margin-inline-end: 1em;
-    }
+<style lang="scss" scoped>
+    @import './../css/news.css';
 </style>
