@@ -7,18 +7,21 @@
     </div>
     <HelloWorld/>
     <CovidNews/>
+    <ExternalNews/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import CovidNews from './components/CovidNews.vue'
+import ExternalNews from './components/ExternalNews.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    CovidNews
+    CovidNews,
+    ExternalNews
   }
 }
 </script>
