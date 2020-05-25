@@ -8,7 +8,7 @@
                 <div class="news">
                     <h4>{{anew.title }}</h4>
                     <div>{{ anew.author }}, {{ anew.creationDate }}</div>
-                    <table>
+                    <table class="aligned">
                         <tr>
                             keywords: <td v-for="keyword in anew.keywords" v-bind:key="keyword"> #{{keyword}}</td>
                         </tr>
@@ -59,8 +59,8 @@
         padding: 0;
     }
     li {
-        display: inline-block;
-        margin: 0 10px;
+        display: block;
+        margin: 0 5rem;
     }
     a {
         color: #42b983;
@@ -70,14 +70,22 @@
         display: block;
         margin-block-start: 1em;
         margin-block-end: 1em;
-        margin-inline-start: 10px;
-        margin-inline-end: 10px;
+        margin-inline-start: 1em;
+        margin-inline-end: 1em;
         text-align: justify;
     }
     div.news {
-        border-color: darkgreen;
+        border-color: #753836;
         border-style: solid;
         border-width: medium;
         border-radius: 5px;
+        display: block;
+    }
+    .aligned {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 1em;
+        margin-inline-end: 1em;
     }
 </style>
