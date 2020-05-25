@@ -4,8 +4,9 @@
         <h2>External News</h2>
         <ul>
             <div v-if="result">The news cannot be loaded. Problem is: {{result}}</div>
-            <li v-for="anew in news" v-bind:key="anew">
+            <li v-for="anew in news" v-bind:key="anew.path">
                 <div class="news">
+                    {{anew}}
                     <h4>{{anew.title }}</h4>
                     <div>{{ anew.provider.name }}, {{ anew.publishedDateTime }}</div>
                     <table class="aligned">
@@ -28,10 +29,7 @@
 
 <script>
     export default {
-        name: 'HelloWorld',
-        props: {
-            msg: String
-        },
+        name: 'ExternalNews',
         data: function() {
             return {
                 news : {},
