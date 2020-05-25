@@ -2,7 +2,7 @@
 export default {
     install(Vue) {
         const connection = new HubConnectionBuilder()
-            .withUrl(`${Vue.prototype.$http.defaults.baseURL}/covid19Info`)
+            .withUrl(`${Vue.prototype.$http.defaults.baseURL}/covid19InfoHub`)
             .configureLogging(LogLevel.Information)
             .build();
 
@@ -11,8 +11,9 @@ export default {
         // every component will use this.$questionHub to access the event bus
         Vue.prototype.$questionHub = questionHub;
         // Forward server side SignalR events through $questionHub, where components will listen to them
-        connection.on("UpdateCovid19Info", res => {
-            questionHub.$emit("covid19-info", { res });
+        connection.on("UpdateCovid19Info", (content) => {
+            var contentJson = JSON.parse(content);
+            questionHub.$emit("covid19-info", { contentJson });
         });
 
         let startedPromise = null;

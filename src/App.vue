@@ -5,21 +5,21 @@
       <h1>Covid 19 News</h1>
       <p>Sofia University SOA project</p>
     </div>
-    <HelloWorld/>
+    <CovidCases/>
     <CovidNews/>
     <ExternalNews/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CovidCases from './components/CovidCases.vue'
 import CovidNews from './components/CovidNews.vue'
 import ExternalNews from './components/ExternalNews.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    CovidCases,
     CovidNews,
     ExternalNews
   }

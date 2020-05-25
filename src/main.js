@@ -16,6 +16,7 @@ Vue.prototype.$http = axios;
 // Install Vue extensions
 Vue.use(BootstrapVue);
 Vue.use(Hub);
+Vue.use(require('vue-moment'));
 
 new Vue({
   render: h => h(App),

@@ -3,7 +3,7 @@
         <br>
         <h2>Covid19 News</h2>
         <ul>
-            {{ responce }}
+            {{ response }}
             <li v-for="anew in news" v-bind:key="anew">
                 <div class="news">
                     <h4>{{anew.title }}</h4>
