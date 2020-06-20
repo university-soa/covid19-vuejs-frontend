@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: covid19-deployment
+  labels:
+    app: vuejs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vuejs
+  template:
+    metadata:
+      labels:
+        app: vuejs
+    spec:
+      containers:
+        - name: covid19-frontend
+          image: denisduev/covid-19-vuejs:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: covid19-service-frontend
+spec:
+  selector:
+    app: example
+  ports:
+    - port: 8088
+      targetPort: 8080
+  type: LoadBalancer
