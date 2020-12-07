@@ -2,7 +2,7 @@
 export default {
     install(Vue) {
         const connection = new HubConnectionBuilder()
-            .withUrl(`${Vue.prototype.$http.defaults.baseURL}/covid19InfoHub`)
+            .withUrl(`${process.env.VUE_APP_COVID_CASES_HOST}/covid19InfoHub`)
             .configureLogging(LogLevel.Information)
             .build();
 

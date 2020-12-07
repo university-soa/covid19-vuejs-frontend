@@ -7,15 +7,9 @@
             <li v-for="anew in news" v-bind:key="anew.path">
                 <div class="news">
                     <h4>{{anew.title }}</h4>
-                    <div>{{ anew.provider.name }}, {{ anew.publishedDateTime }}</div>
-                    <table class="aligned">
-                        <tr>
-                            keywords:
-                            <td v-for="topic in anew.topics" v-bind:key="topic"> #{{topic}}</td>
-                        </tr>
-                    </table>
-                    <p class="news">{{anew.excerpt}}</p>
-                    See more here: <a :href="anew.webUrl">{{anew.webUrl}}</a>
+                    <div>{{ anew.source.name }}, {{ anew.publishedAt }}</div>
+                    <p class="news">{{anew.content}}</p>
+                    See more here: <a :href="anew.url">{{anew.url}}</a>
                 </div>
                 <br>
             </li>
@@ -36,11 +30,7 @@
             };
         },
         created() {
-            this.$http.get("https://api.smartable.ai/coronavirus/news/US",  {
-                headers: {
-                    "Subscription-Key": "3009d4ccc29e4808af1ccc25c69b4d5d"
-                }
-            }).then(response => this.news = response.data.news).catch(e => this.result = e);
+            this.$http.get(process.env.VUE_APP_EXTERNAL_NEWS_ENDPOINT + "&apiKey=" + process.env.VUE_APP_EXTERNAL_NEWS_API_KEY).then(response => this.news = response.data.articles).catch(e => this.result = e);
         }
     }
 </script>

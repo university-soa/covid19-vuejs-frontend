@@ -31,14 +31,14 @@
         data: function() {
             return {
                 news : [],
-                covid: {}
+                covid: {},
             };
         },
         created() {
-            this.$http.get("http://localhost:8081/news").then(response => response.data).then(response => {
+            this.$http.get(process.env.VUE_APP_NEWS_ENDPOINT).then(response => response.data).then(response => {
                 this.news = response
             })
-        }
+        },
     }
 </script>
 
