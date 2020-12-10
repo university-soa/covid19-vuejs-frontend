@@ -30,7 +30,7 @@
             };
         },
         created() {
-            this.$http.get(process.env.VUE_APP_EXTERNAL_NEWS_ENDPOINT + "&apiKey=" + process.env.VUE_APP_EXTERNAL_NEWS_API_KEY).then(response => this.news = response.data.articles).catch(e => this.result = e);
+            this.$http.get(process.env.VUE_APP_EXTERNAL_NEWS_ENDPOINT).then(response => this.news = response.data.articles).catch(e => this.result = e);
         }
     }
 </script>
